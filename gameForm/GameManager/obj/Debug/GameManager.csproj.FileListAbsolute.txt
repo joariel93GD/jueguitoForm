@@ -1,0 +1,5 @@
+E:\Games projects\jueguitoForm\gameForm\GameManager\bin\Debug\GameManager.dll
+E:\Games projects\jueguitoForm\gameForm\GameManager\bin\Debug\GameManager.pdb
+E:\Games projects\jueguitoForm\gameForm\GameManager\obj\Debug\GameManager.csproj.CoreCompileInputs.cache
+E:\Games projects\jueguitoForm\gameForm\GameManager\obj\Debug\GameManager.dll
+E:\Games projects\jueguitoForm\gameForm\GameManager\obj\Debug\GameManager.pdb

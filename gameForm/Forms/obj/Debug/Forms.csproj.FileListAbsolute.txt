@@ -1,0 +1,13 @@
+E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\Forms.exe.config
+E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\Forms.exe
+E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\Forms.pdb
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.Properties.Resources.resources
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.exe
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.pdb
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.PantallaInicio.resources
+E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\GameManager.dll
+E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\GameManager.pdb
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.csproj.CopyComplete
