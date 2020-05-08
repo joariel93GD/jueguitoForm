@@ -38,6 +38,7 @@
             this.botonCentro = new System.Windows.Forms.Button();
             this.labelVidas = new System.Windows.Forms.Label();
             this.imgCorazon = new System.Windows.Forms.PictureBox();
+            this.btnCambiarPreg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgCorazon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             this.labelVidas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVidas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelVidas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelVidas.Location = new System.Drawing.Point(74, 271);
+            this.labelVidas.Location = new System.Drawing.Point(163, 272);
             this.labelVidas.Name = "labelVidas";
             this.labelVidas.Size = new System.Drawing.Size(37, 51);
             this.labelVidas.TabIndex = 7;
@@ -162,7 +163,7 @@
             // imgCorazon
             // 
             this.imgCorazon.Image = ((System.Drawing.Image)(resources.GetObject("imgCorazon.Image")));
-            this.imgCorazon.Location = new System.Drawing.Point(48, 252);
+            this.imgCorazon.Location = new System.Drawing.Point(137, 252);
             this.imgCorazon.Name = "imgCorazon";
             this.imgCorazon.Size = new System.Drawing.Size(90, 84);
             this.imgCorazon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,12 +171,27 @@
             this.imgCorazon.TabStop = false;
             this.imgCorazon.Visible = false;
             // 
+            // btnCambiarPreg
+            // 
+            this.btnCambiarPreg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCambiarPreg.BackgroundImage")));
+            this.btnCambiarPreg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCambiarPreg.FlatAppearance.BorderSize = 0;
+            this.btnCambiarPreg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarPreg.Location = new System.Drawing.Point(484, 252);
+            this.btnCambiarPreg.Name = "btnCambiarPreg";
+            this.btnCambiarPreg.Size = new System.Drawing.Size(90, 84);
+            this.btnCambiarPreg.TabIndex = 9;
+            this.btnCambiarPreg.UseVisualStyleBackColor = true;
+            this.btnCambiarPreg.Visible = false;
+            this.btnCambiarPreg.Click += new System.EventHandler(this.btnCambiarPreg_Click);
+            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(705, 612);
+            this.Controls.Add(this.btnCambiarPreg);
             this.Controls.Add(this.imgCorazon);
             this.Controls.Add(this.labelVidas);
             this.Controls.Add(this.botonCentro);
@@ -205,6 +221,7 @@
         private System.Windows.Forms.Button botonCentro;
         private System.Windows.Forms.Label labelVidas;
         private System.Windows.Forms.PictureBox imgCorazon;
+        private System.Windows.Forms.Button btnCambiarPreg;
     }
 }
 

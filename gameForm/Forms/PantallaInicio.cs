@@ -35,6 +35,7 @@ namespace Forms
             botonCentro.Visible = true;
             botonArD.Visible = true;
             botonArI.Visible = true;
+            btnCambiarPreg.Visible = true;
             labelVidas.Visible = true;
             imgCorazon.Visible = true;
             labelVidas.Text = this.juego.Vidas.ToString();
@@ -193,8 +194,22 @@ namespace Forms
             {
                 this.juego.Vidas--;
                 labelVidas.Text = this.juego.Vidas.ToString();
+
+                Task wait = Task.Delay(500);
+                wait.Wait();
             }
         }
-#endregion
+        #endregion
+
+        private void btnCambiarPreg_Click(object sender, EventArgs e)
+        {
+            if(this.juego.Vidas>1)
+            { 
+            ElegirPregunta(sender);
+            ElegirBoton(sender);
+            this.juego.Vidas--;
+            labelVidas.Text = this.juego.Vidas.ToString();
+            }
+        }
     }
 }
