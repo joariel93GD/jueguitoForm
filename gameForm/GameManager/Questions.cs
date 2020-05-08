@@ -240,7 +240,7 @@ namespace GameManager
             IniciarJuego(laLista, p59);
         }
 
-        public Questions ElegirPregunta(List<Questions> laLista)
+        public static Questions ElegirPregunta(List<Questions> laLista)
         {
             Questions retorno = new Questions();
             Random indice = new Random();
@@ -250,7 +250,31 @@ namespace GameManager
             return retorno;
         }
 
+        public static bool operator ==(Questions q1, Questions q2)
+        {
+            if (q1.Pregunta == q2.Pregunta)
+                return true;
 
+            return false;
+
+        }
+        public static bool operator !=(Questions q1, Questions q2)
+        {
+            return !(q1 == q2);
+        }
+        public static bool operator -(List<Questions> laLista, Questions pregunta)
+        {
+            foreach (Questions item in laLista)
+            {
+                if(item==pregunta)
+                {
+                    laLista.Remove(item);
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
         #endregion
 

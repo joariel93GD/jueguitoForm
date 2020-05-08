@@ -24,9 +24,9 @@ namespace GameManager
             this.elJuego = new List<Questions>();
             this.yaResueltas = new List<Questions>();
             this.laPregunta = new Questions();
-            this.Vidas = 5;
-            this.Nivel = 1;
-
+            this.vidas = 5;
+            this.nivel = 1;
+            Questions.ArmarLaLista(this.ElJuego);
         }
 
         #endregion
@@ -101,7 +101,6 @@ namespace GameManager
         public void CambiarPregunta()
         {
             RestarVida();
-            laPregunta.ElegirPregunta(this.ElJuego);
 
         }
 
