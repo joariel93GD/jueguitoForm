@@ -81,6 +81,7 @@
             this.botonAbI.TabIndex = 2;
             this.botonAbI.UseVisualStyleBackColor = true;
             this.botonAbI.Visible = false;
+            this.botonAbI.Click += new System.EventHandler(this.botonAbI_Click);
             // 
             // botonArI
             // 
@@ -110,6 +111,7 @@
             this.botonAbD.TabIndex = 4;
             this.botonAbD.UseVisualStyleBackColor = true;
             this.botonAbD.Visible = false;
+            this.botonAbD.Click += new System.EventHandler(this.botonAbD_Click);
             // 
             // botonArD
             // 
@@ -125,6 +127,7 @@
             this.botonArD.TabIndex = 5;
             this.botonArD.UseVisualStyleBackColor = true;
             this.botonArD.Visible = false;
+            this.botonArD.Click += new System.EventHandler(this.botonArD_Click);
             // 
             // botonCentro
             // 
@@ -139,6 +142,7 @@
             this.botonCentro.TabIndex = 6;
             this.botonCentro.UseVisualStyleBackColor = true;
             this.botonCentro.Visible = false;
+            this.botonCentro.Click += new System.EventHandler(this.botonCentro_Click);
             // 
             // labelVidas
             // 

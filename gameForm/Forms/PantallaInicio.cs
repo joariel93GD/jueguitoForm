@@ -109,6 +109,8 @@ namespace Forms
             this.Text = text;
         }
 
+        #region Cuando tocan el boton
+
         private void botonArI_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonArI.Text)
@@ -120,7 +122,79 @@ namespace Forms
                 ElegirBoton(sender);
             }
             else
+            { 
                 this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
+            }
         }
+
+        private void botonAbD_Click(object sender, EventArgs e)
+        {
+            if (this.juego.LaPregunta.Correcta == this.botonAbD.Text)
+            {
+
+                this.juego.Nivel++;
+                PonerNivel(sender);
+                ElegirPregunta(sender);
+                ElegirBoton(sender);
+            }
+            else
+            {
+                this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
+            }
+        }
+
+        private void botonArD_Click(object sender, EventArgs e)
+        {
+            if (this.juego.LaPregunta.Correcta == this.botonArD.Text)
+            {
+
+                this.juego.Nivel++;
+                PonerNivel(sender);
+                ElegirPregunta(sender);
+                ElegirBoton(sender);
+            }
+            else
+            {
+                this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
+            }
+        }
+
+        private void botonCentro_Click(object sender, EventArgs e)
+        {
+            if (this.juego.LaPregunta.Correcta == this.botonCentro.Text)
+            {
+
+                this.juego.Nivel++;
+                PonerNivel(sender);
+                ElegirPregunta(sender);
+                ElegirBoton(sender);
+            }
+            else
+            {
+                this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
+            }
+        }
+
+        private void botonAbI_Click(object sender, EventArgs e)
+        {
+            if (this.juego.LaPregunta.Correcta == this.botonAbI.Text)
+            {
+
+                this.juego.Nivel++;
+                PonerNivel(sender);
+                ElegirPregunta(sender);
+                ElegirBoton(sender);
+            }
+            else
+            {
+                this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
+            }
+        }
+#endregion
     }
 }
