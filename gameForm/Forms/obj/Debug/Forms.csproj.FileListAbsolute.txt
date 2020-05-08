@@ -11,3 +11,4 @@ E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.PantallaInicio.res
 E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\GameManager.dll
 E:\Games projects\jueguitoForm\gameForm\Forms\bin\Debug\GameManager.pdb
 E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.csproj.CopyComplete
+E:\Games projects\jueguitoForm\gameForm\Forms\obj\Debug\Forms.GameOver.resources

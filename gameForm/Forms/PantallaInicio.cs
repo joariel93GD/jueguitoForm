@@ -15,7 +15,7 @@ namespace Forms
     public partial class PantallaInicio : Form
     {
         Manager juego = new Manager();
-        
+        GameOver fin = new GameOver();
         
 
 
@@ -28,7 +28,10 @@ namespace Forms
 
         private void start_Click(object sender, EventArgs e)
         {
-            
+            lblInstrCambiarPreg.Visible = false;
+            lblInstrucciones.Visible = false;
+            btnOkEmpecemos.Visible = false;
+            btnInstrucciones.Visible = false;
             start.Visible = false;
             botonAbD.Visible = true;
             botonAbI.Visible = true;
@@ -123,9 +126,14 @@ namespace Forms
                 ElegirBoton(sender);
             }
             else
-            { 
-                this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
+            {
+                if (this.juego.Vidas > 1)
+                {
+                    this.juego.Vidas--;
+                    labelVidas.Text = this.juego.Vidas.ToString();
+                }
+                else
+                    fin.ShowDialog();
             }
         }
 
@@ -141,8 +149,13 @@ namespace Forms
             }
             else
             {
-                this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
+                if (this.juego.Vidas > 1)
+                {
+                    this.juego.Vidas--;
+                    labelVidas.Text = this.juego.Vidas.ToString();
+                }
+                else
+                    fin.ShowDialog();
             }
         }
 
@@ -158,8 +171,13 @@ namespace Forms
             }
             else
             {
-                this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
+                if (this.juego.Vidas > 1)
+                {
+                    this.juego.Vidas--;
+                    labelVidas.Text = this.juego.Vidas.ToString();
+                }
+                else
+                    fin.ShowDialog();
             }
         }
 
@@ -175,8 +193,13 @@ namespace Forms
             }
             else
             {
-                this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
+                if (this.juego.Vidas > 1)
+                {
+                    this.juego.Vidas--;
+                    labelVidas.Text = this.juego.Vidas.ToString();
+                }
+                else
+                    fin.ShowDialog();
             }
         }
 
@@ -192,11 +215,14 @@ namespace Forms
             }
             else
             {
-                this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
-
-                Task wait = Task.Delay(500);
-                wait.Wait();
+                if (this.juego.Vidas > 1)
+                {
+                    this.juego.Vidas--;
+                    labelVidas.Text = this.juego.Vidas.ToString();
+                }
+                else
+                    fin.ShowDialog();
+                
             }
         }
         #endregion
@@ -204,12 +230,35 @@ namespace Forms
         private void btnCambiarPreg_Click(object sender, EventArgs e)
         {
             if(this.juego.Vidas>1)
-            { 
-            ElegirPregunta(sender);
-            ElegirBoton(sender);
-            this.juego.Vidas--;
-            labelVidas.Text = this.juego.Vidas.ToString();
+            {
+                ElegirPregunta(sender);
+                ElegirBoton(sender);
+                this.juego.Vidas--;
+                labelVidas.Text = this.juego.Vidas.ToString();
             }
+            else
+            {                
+                fin.ShowDialog();
+            }
+
+        }
+
+        private void btnInstrucciones_Click(object sender, EventArgs e)
+        {
+            start.Visible = false;
+            btnInstrucciones.Visible = false;
+            lblInstrucciones.Visible = true;
+            lblInstrCambiarPreg.Visible = true;
+            btnOkEmpecemos.Visible = true;
+            btnCambiarPreg.Visible = true;
+            labelVidas.Visible = true;
+            imgCorazon.Visible = true;
+            labelVidas.Text = this.juego.Vidas.ToString();
+        }
+
+        private void btnOkEmpecemos_Click(object sender, EventArgs e)
+        {
+            start_Click(sender, e);
         }
     }
 }

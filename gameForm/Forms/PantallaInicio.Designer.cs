@@ -39,7 +39,12 @@
             this.labelVidas = new System.Windows.Forms.Label();
             this.imgCorazon = new System.Windows.Forms.PictureBox();
             this.btnCambiarPreg = new System.Windows.Forms.Button();
+            this.btnInstrucciones = new System.Windows.Forms.Button();
+            this.btnOkEmpecemos = new System.Windows.Forms.Button();
+            this.lblInstrCambiarPreg = new System.Windows.Forms.PictureBox();
+            this.lblInstrucciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgCorazon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblInstrCambiarPreg)).BeginInit();
             this.SuspendLayout();
             // 
             // start
@@ -185,12 +190,78 @@
             this.btnCambiarPreg.Visible = false;
             this.btnCambiarPreg.Click += new System.EventHandler(this.btnCambiarPreg_Click);
             // 
+            // btnInstrucciones
+            // 
+            this.btnInstrucciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInstrucciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInstrucciones.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.btnInstrucciones.FlatAppearance.BorderSize = 0;
+            this.btnInstrucciones.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Window;
+            this.btnInstrucciones.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
+            this.btnInstrucciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInstrucciones.Font = new System.Drawing.Font("Berlin Sans FB Demi", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstrucciones.Location = new System.Drawing.Point(260, 403);
+            this.btnInstrucciones.Name = "btnInstrucciones";
+            this.btnInstrucciones.Size = new System.Drawing.Size(199, 77);
+            this.btnInstrucciones.TabIndex = 10;
+            this.btnInstrucciones.Text = "Como se juega";
+            this.btnInstrucciones.UseVisualStyleBackColor = true;
+            this.btnInstrucciones.Click += new System.EventHandler(this.btnInstrucciones_Click);
+            // 
+            // btnOkEmpecemos
+            // 
+            this.btnOkEmpecemos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOkEmpecemos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOkEmpecemos.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.btnOkEmpecemos.FlatAppearance.BorderSize = 0;
+            this.btnOkEmpecemos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Window;
+            this.btnOkEmpecemos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
+            this.btnOkEmpecemos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOkEmpecemos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOkEmpecemos.Location = new System.Drawing.Point(505, 517);
+            this.btnOkEmpecemos.Name = "btnOkEmpecemos";
+            this.btnOkEmpecemos.Size = new System.Drawing.Size(162, 77);
+            this.btnOkEmpecemos.TabIndex = 11;
+            this.btnOkEmpecemos.Text = "Ok empecemos";
+            this.btnOkEmpecemos.UseVisualStyleBackColor = true;
+            this.btnOkEmpecemos.Visible = false;
+            this.btnOkEmpecemos.Click += new System.EventHandler(this.btnOkEmpecemos_Click);
+            // 
+            // lblInstrCambiarPreg
+            // 
+            this.lblInstrCambiarPreg.Image = ((System.Drawing.Image)(resources.GetObject("lblInstrCambiarPreg.Image")));
+            this.lblInstrCambiarPreg.Location = new System.Drawing.Point(34, 342);
+            this.lblInstrCambiarPreg.Name = "lblInstrCambiarPreg";
+            this.lblInstrCambiarPreg.Size = new System.Drawing.Size(465, 209);
+            this.lblInstrCambiarPreg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.lblInstrCambiarPreg.TabIndex = 12;
+            this.lblInstrCambiarPreg.TabStop = false;
+            this.lblInstrCambiarPreg.Visible = false;
+            // 
+            // lblInstrucciones
+            // 
+            this.lblInstrucciones.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrucciones.Location = new System.Drawing.Point(12, 9);
+            this.lblInstrucciones.Name = "lblInstrucciones";
+            this.lblInstrucciones.Size = new System.Drawing.Size(681, 216);
+            this.lblInstrucciones.TabIndex = 13;
+            this.lblInstrucciones.Text = "Esto es un juego trivia, una pregunta y 5 respuestas...solo 1 es correcta.\r\nTiene" +
+    "s 5 vidas, no acertar en la respuesta te costará 1 de tus vidas...\r\nTan solo son" +
+    " 5 niveles...¡Vamos tu puedes!";
+            this.lblInstrucciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInstrucciones.Visible = false;
+            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(705, 612);
+            this.Controls.Add(this.lblInstrucciones);
+            this.Controls.Add(this.lblInstrCambiarPreg);
+            this.Controls.Add(this.btnOkEmpecemos);
+            this.Controls.Add(this.btnInstrucciones);
             this.Controls.Add(this.btnCambiarPreg);
             this.Controls.Add(this.imgCorazon);
             this.Controls.Add(this.labelVidas);
@@ -202,11 +273,14 @@
             this.Controls.Add(this.formPregunta);
             this.Controls.Add(this.start);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PantallaInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
             ((System.ComponentModel.ISupportInitialize)(this.imgCorazon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblInstrCambiarPreg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,6 +296,10 @@
         private System.Windows.Forms.Label labelVidas;
         private System.Windows.Forms.PictureBox imgCorazon;
         private System.Windows.Forms.Button btnCambiarPreg;
+        private System.Windows.Forms.Button btnInstrucciones;
+        private System.Windows.Forms.Button btnOkEmpecemos;
+        private System.Windows.Forms.PictureBox lblInstrCambiarPreg;
+        private System.Windows.Forms.Label lblInstrucciones;
     }
 }
 
