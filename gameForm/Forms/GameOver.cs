@@ -21,5 +21,10 @@ namespace Forms
         {
 
         }
+
+        private void btnReintentar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

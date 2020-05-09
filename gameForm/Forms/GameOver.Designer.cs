@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameOver));
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReintentar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -44,6 +45,20 @@
             this.label1.Text = "Al parecer el juego fue demasiado para vos...\r\nNo te desanimes proba de nuevo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnReintentar
+            // 
+            this.btnReintentar.FlatAppearance.BorderSize = 0;
+            this.btnReintentar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReintentar.Font = new System.Drawing.Font("Berlin Sans FB", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintentar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReintentar.Location = new System.Drawing.Point(226, 495);
+            this.btnReintentar.Name = "btnReintentar";
+            this.btnReintentar.Size = new System.Drawing.Size(238, 57);
+            this.btnReintentar.TabIndex = 1;
+            this.btnReintentar.Text = "Reintentar";
+            this.btnReintentar.UseVisualStyleBackColor = true;
+            this.btnReintentar.Click += new System.EventHandler(this.btnReintentar_Click);
+            // 
             // GameOver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -51,10 +66,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(705, 612);
+            this.Controls.Add(this.btnReintentar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "GameOver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameOver";
@@ -67,5 +82,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReintentar;
     }
 }
