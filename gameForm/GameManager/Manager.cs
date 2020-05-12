@@ -85,25 +85,34 @@ namespace GameManager
 
         #region Metodos
 
+        /// <summary>
+        /// Agrega la pregunta resuelta a la lista de resueltas
+        /// </summary>
         public void PreguntaResuelta(Questions laPregunta)
         {
             this.YaResueltas.Add(laPregunta);
         }
 
+        /// <summary>
+        /// Resta una vida
+        /// </summary>
         public void RestarVida()
         {
-            this.Vidas -= 1;
+            this.Vidas --;
         }
+
+        /// <summary>
+        /// Suma un nivel
+        /// </summary>
         public void NivelResuelto()
         {
             this.Nivel++;
         }
-        public void CambiarPregunta()
-        {
-            RestarVida();
 
-        }
 
+        /// <summary>
+        /// Inicializa el juego
+        /// </summary>
         public void ArrancarElJuego()
         {
             Questions.ArmarLaLista(ElJuego);

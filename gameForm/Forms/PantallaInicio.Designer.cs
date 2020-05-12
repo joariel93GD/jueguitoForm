@@ -43,8 +43,18 @@
             this.btnOkEmpecemos = new System.Windows.Forms.Button();
             this.lblInstrCambiarPreg = new System.Windows.Forms.PictureBox();
             this.lblInstrucciones = new System.Windows.Forms.Label();
+            this.no1 = new System.Windows.Forms.PictureBox();
+            this.no2 = new System.Windows.Forms.PictureBox();
+            this.no3 = new System.Windows.Forms.PictureBox();
+            this.no4 = new System.Windows.Forms.PictureBox();
+            this.no5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgCorazon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblInstrCambiarPreg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no5)).BeginInit();
             this.SuspendLayout();
             // 
             // start
@@ -251,6 +261,66 @@
             this.lblInstrucciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblInstrucciones.Visible = false;
             // 
+            // no1
+            // 
+            this.no1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.no1.Image = ((System.Drawing.Image)(resources.GetObject("no1.Image")));
+            this.no1.Location = new System.Drawing.Point(34, 0);
+            this.no1.Margin = new System.Windows.Forms.Padding(0);
+            this.no1.Name = "no1";
+            this.no1.Size = new System.Drawing.Size(650, 614);
+            this.no1.TabIndex = 14;
+            this.no1.TabStop = false;
+            this.no1.Visible = false;
+            // 
+            // no2
+            // 
+            this.no2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.no2.Image = ((System.Drawing.Image)(resources.GetObject("no2.Image")));
+            this.no2.Location = new System.Drawing.Point(34, 0);
+            this.no2.Margin = new System.Windows.Forms.Padding(0);
+            this.no2.Name = "no2";
+            this.no2.Size = new System.Drawing.Size(650, 614);
+            this.no2.TabIndex = 15;
+            this.no2.TabStop = false;
+            this.no2.Visible = false;
+            // 
+            // no3
+            // 
+            this.no3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.no3.Image = ((System.Drawing.Image)(resources.GetObject("no3.Image")));
+            this.no3.Location = new System.Drawing.Point(34, 0);
+            this.no3.Margin = new System.Windows.Forms.Padding(0);
+            this.no3.Name = "no3";
+            this.no3.Size = new System.Drawing.Size(650, 614);
+            this.no3.TabIndex = 16;
+            this.no3.TabStop = false;
+            this.no3.Visible = false;
+            // 
+            // no4
+            // 
+            this.no4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.no4.Image = ((System.Drawing.Image)(resources.GetObject("no4.Image")));
+            this.no4.Location = new System.Drawing.Point(34, 0);
+            this.no4.Margin = new System.Windows.Forms.Padding(0);
+            this.no4.Name = "no4";
+            this.no4.Size = new System.Drawing.Size(650, 614);
+            this.no4.TabIndex = 17;
+            this.no4.TabStop = false;
+            this.no4.Visible = false;
+            // 
+            // no5
+            // 
+            this.no5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.no5.Image = ((System.Drawing.Image)(resources.GetObject("no5.Image")));
+            this.no5.Location = new System.Drawing.Point(34, 0);
+            this.no5.Margin = new System.Windows.Forms.Padding(0);
+            this.no5.Name = "no5";
+            this.no5.Size = new System.Drawing.Size(650, 614);
+            this.no5.TabIndex = 18;
+            this.no5.TabStop = false;
+            this.no5.Visible = false;
+            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +328,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(705, 612);
+            this.Controls.Add(this.no5);
+            this.Controls.Add(this.no4);
+            this.Controls.Add(this.no3);
+            this.Controls.Add(this.no2);
+            this.Controls.Add(this.no1);
             this.Controls.Add(this.lblInstrucciones);
             this.Controls.Add(this.lblInstrCambiarPreg);
             this.Controls.Add(this.btnOkEmpecemos);
@@ -277,8 +352,14 @@
             this.Name = "PantallaInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
+            this.Load += new System.EventHandler(this.PantallaInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgCorazon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblInstrCambiarPreg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,6 +381,11 @@
         private System.Windows.Forms.Button btnOkEmpecemos;
         private System.Windows.Forms.PictureBox lblInstrCambiarPreg;
         private System.Windows.Forms.Label lblInstrucciones;
+        private System.Windows.Forms.PictureBox no1;
+        private System.Windows.Forms.PictureBox no2;
+        private System.Windows.Forms.PictureBox no3;
+        private System.Windows.Forms.PictureBox no4;
+        private System.Windows.Forms.PictureBox no5;
     }
 }
 

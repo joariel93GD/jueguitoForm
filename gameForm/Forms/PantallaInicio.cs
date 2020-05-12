@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,9 @@ namespace Forms
 
         }
 
+        /// <summary>
+        /// Pone visible los controladores necesarios para el juego y muestra la primera pregunta
+        /// </summary>
         private void start_Click(object sender, EventArgs e)
         {
             lblInstrCambiarPreg.Visible = false;
@@ -50,6 +54,9 @@ namespace Forms
 
         }
 
+        /// <summary>
+        /// Elige a que boton le pondra la pregunta correcta
+        /// </summary>
         private void ElegirBoton(object sender)
         {
             Random ordenDeBotones = new Random();
@@ -100,6 +107,10 @@ namespace Forms
 
 
         }
+      
+        /// <summary>
+        /// Selecciona una pregunta de la lista
+        /// </summary>
         private void ElegirPregunta(object sender)
         {
             Random eligeIndice = new Random();
@@ -107,6 +118,10 @@ namespace Forms
             this.juego.LaPregunta = this.juego.ElJuego[eligeIndice.Next(0, this.juego.ElJuego.Count-1)];
 
         }
+
+        /// <summary>
+        /// Escribe en la barra principal el nivel actual del juego
+        /// </summary>
         private void PonerNivel(object sender)
         {
             string text = String.Format("Nivel {0}", this.juego.Nivel);
@@ -114,7 +129,9 @@ namespace Forms
         }
 
         #region Cuando tocan el boton
-
+        /// <summary>
+        /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
+        /// </summary>
         private void botonArI_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonArI.Text)
@@ -129,14 +146,20 @@ namespace Forms
             {
                 if (this.juego.Vidas > 1)
                 {
+                    MostrarLosNo(sender);
                     this.juego.Vidas--;
                     labelVidas.Text = this.juego.Vidas.ToString();
                 }
                 else
+                {
                     fin.ShowDialog();
+                    this.Hide();
+                }
             }
         }
-
+        /// <summary>
+        /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
+        /// </summary>
         private void botonAbD_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonAbD.Text)
@@ -151,14 +174,21 @@ namespace Forms
             {
                 if (this.juego.Vidas > 1)
                 {
+                    MostrarLosNo(sender);
                     this.juego.Vidas--;
                     labelVidas.Text = this.juego.Vidas.ToString();
                 }
                 else
+                {
                     fin.ShowDialog();
+                    this.Hide();
+                }
             }
         }
 
+        /// <summary>
+        /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
+        /// </summary>
         private void botonArD_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonArD.Text)
@@ -173,14 +203,20 @@ namespace Forms
             {
                 if (this.juego.Vidas > 1)
                 {
+                    MostrarLosNo(sender);
                     this.juego.Vidas--;
                     labelVidas.Text = this.juego.Vidas.ToString();
                 }
                 else
+                {
                     fin.ShowDialog();
+                    this.Hide();
+                }
             }
         }
-
+        /// <summary>
+        /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
+        /// </summary>
         private void botonCentro_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonCentro.Text)
@@ -195,14 +231,20 @@ namespace Forms
             {
                 if (this.juego.Vidas > 1)
                 {
+                    MostrarLosNo(sender);
                     this.juego.Vidas--;
                     labelVidas.Text = this.juego.Vidas.ToString();
                 }
                 else
+                {
                     fin.ShowDialog();
+                    this.Hide();
+                }
             }
         }
-
+        /// <summary>
+        /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
+        /// </summary>
         private void botonAbI_Click(object sender, EventArgs e)
         {
             if (this.juego.LaPregunta.Correcta == this.botonAbI.Text)
@@ -221,12 +263,19 @@ namespace Forms
                     labelVidas.Text = this.juego.Vidas.ToString();
                 }
                 else
+                {
+                    MostrarLosNo(sender);
                     fin.ShowDialog();
-                
+                    this.Hide();
+                }
+
             }
         }
         #endregion
 
+        /// <summary>
+        /// Revisa si el jugador tiene vidas para cambiar por una nueva pregunta
+        /// </summary>
         private void btnCambiarPreg_Click(object sender, EventArgs e)
         {
             if(this.juego.Vidas>1)
@@ -239,10 +288,14 @@ namespace Forms
             else
             {                
                 fin.ShowDialog();
+                this.Hide();
             }
 
         }
 
+        /// <summary>
+        /// Activa la visibilidad de las instruccines del juego
+        /// </summary>
         private void btnInstrucciones_Click(object sender, EventArgs e)
         {
             start.Visible = false;
@@ -256,9 +309,36 @@ namespace Forms
             labelVidas.Text = this.juego.Vidas.ToString();
         }
 
+        /// <summary>
+        /// Arranca el juego desde las instrucciones
+        /// </summary>
         private void btnOkEmpecemos_Click(object sender, EventArgs e)
         {
             start_Click(sender, e);
+        }
+
+        private void MostrarLosNo(object sender)
+        {
+            
+            this.no1.Visible = true;
+            Task.Delay(5000);
+            this.no1.Visible = false;
+            this.no2.Visible = true;
+            Task.Delay(5000);
+            this.no2.Visible = false;
+            this.no3.Visible = true;
+            Task.Delay(5000);
+            this.no3.Visible = false;
+            this.no4.Visible = true;
+            Task.Delay(5000);
+            this.no4.Visible = false;
+            this.no5.Visible = true;
+            Task.Delay(5000);
+            this.no5.Visible = false;
+        }
+        private void PantallaInicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -171,12 +171,18 @@ namespace GameManager
 
         #region Metodos
 
+        /// <summary>
+        /// Agrega la pregunta que recibe por parametro a la lista que recibe
+        /// </summary>
         public static List<Questions> IniciarJuego(List<Questions> laLista, Questions laPregunta)
         {
             laLista.Add(laPregunta);
             return laLista;
         }
 
+        /// <summary>
+        /// Agrega las preguntas a la lista que recibe por parametro
+        /// </summary>
         public static void ArmarLaLista(List<Questions> laLista)
         {
             IniciarJuego(laLista, p01);
@@ -240,6 +246,9 @@ namespace GameManager
             IniciarJuego(laLista, p59);
         }
 
+        /// <summary>
+        /// Elige una pregunta de la lista que recibe por parametro y la retorna
+        /// </summary>
         public static Questions ElegirPregunta(List<Questions> laLista)
         {
             Questions retorno = new Questions();
@@ -250,6 +259,9 @@ namespace GameManager
             return retorno;
         }
 
+        /// <summary>
+        /// Compara 2 preguntas y retorna true si son iguales
+        /// </summary>
         public static bool operator ==(Questions q1, Questions q2)
         {
             if (q1.Pregunta == q2.Pregunta)
@@ -258,10 +270,18 @@ namespace GameManager
             return false;
 
         }
+
+        /// <summary>
+        /// Compara 2 preguntas y retorna true si son distintas
+        /// </summary>
         public static bool operator !=(Questions q1, Questions q2)
         {
             return !(q1 == q2);
         }
+
+        /// <summary>
+        /// Quita la pregunta de la lista si la encuentra
+        /// </summary>
         public static bool operator -(List<Questions> laLista, Questions pregunta)
         {
             foreach (Questions item in laLista)

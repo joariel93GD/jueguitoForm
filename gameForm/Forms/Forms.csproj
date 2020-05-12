@@ -94,5 +94,20 @@
       <Name>GameManager</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
