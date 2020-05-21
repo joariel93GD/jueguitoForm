@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -16,7 +17,7 @@ namespace Forms
     public partial class PantallaInicio : Form
     {
         Manager juego = new Manager();
-        GameOver fin = new GameOver();
+        
         
 
 
@@ -114,9 +115,23 @@ namespace Forms
         private void ElegirPregunta(object sender)
         {
             Random eligeIndice = new Random();
+            bool flag = default;
+           
+            while (flag == false) 
+            {
+                flag = true;
+                this.juego.LaPregunta = this.juego.ElJuego[eligeIndice.Next(0, this.juego.ElJuego.Count - 1)];
 
-            this.juego.LaPregunta = this.juego.ElJuego[eligeIndice.Next(0, this.juego.ElJuego.Count-1)];
+                foreach (Questions item in this.juego.YaResueltas)
+                {
+                    if (item == this.juego.LaPregunta)
+                    { 
+                        flag = false;
+                        break;
+                    }
+                }
 
+            }
         }
 
         /// <summary>
@@ -127,7 +142,10 @@ namespace Forms
             string text = String.Format("Nivel {0}", this.juego.Nivel);
             this.Text = text;
         }
-
+        private void PonerVidas(object sender)
+        {
+            this.labelVidas.Text = this.juego.Vidas.ToString();
+        }
         #region Cuando tocan el boton
         /// <summary>
         /// Revisa si el boton clickeado tiene la respuesta correcta o incorrecta
@@ -136,7 +154,7 @@ namespace Forms
         {
             if (this.juego.LaPregunta.Correcta == this.botonArI.Text)
             {
-
+                this.juego.PreguntaResuelta(this.juego.LaPregunta);
                 this.juego.Nivel++;
                 PonerNivel(sender);
                 ElegirPregunta(sender);
@@ -148,12 +166,11 @@ namespace Forms
                 {
                     MostrarLosNo(sender);
                     this.juego.Vidas--;
-                    labelVidas.Text = this.juego.Vidas.ToString();
+                    PonerVidas(sender);
                 }
                 else
                 {
-                    fin.ShowDialog();
-                    this.Hide();
+                    LanzarGameOver(sender);
                 }
             }
         }
@@ -164,7 +181,7 @@ namespace Forms
         {
             if (this.juego.LaPregunta.Correcta == this.botonAbD.Text)
             {
-
+                this.juego.PreguntaResuelta(this.juego.LaPregunta);
                 this.juego.Nivel++;
                 PonerNivel(sender);
                 ElegirPregunta(sender);
@@ -176,12 +193,11 @@ namespace Forms
                 {
                     MostrarLosNo(sender);
                     this.juego.Vidas--;
-                    labelVidas.Text = this.juego.Vidas.ToString();
+                    PonerVidas(sender);
                 }
                 else
                 {
-                    fin.ShowDialog();
-                    this.Hide();
+                    LanzarGameOver(sender);
                 }
             }
         }
@@ -193,7 +209,7 @@ namespace Forms
         {
             if (this.juego.LaPregunta.Correcta == this.botonArD.Text)
             {
-
+                this.juego.PreguntaResuelta(this.juego.LaPregunta);
                 this.juego.Nivel++;
                 PonerNivel(sender);
                 ElegirPregunta(sender);
@@ -205,12 +221,11 @@ namespace Forms
                 {
                     MostrarLosNo(sender);
                     this.juego.Vidas--;
-                    labelVidas.Text = this.juego.Vidas.ToString();
+                    PonerVidas(sender);
                 }
                 else
                 {
-                    fin.ShowDialog();
-                    this.Hide();
+                    LanzarGameOver(sender);
                 }
             }
         }
@@ -221,7 +236,7 @@ namespace Forms
         {
             if (this.juego.LaPregunta.Correcta == this.botonCentro.Text)
             {
-
+                this.juego.PreguntaResuelta(this.juego.LaPregunta);
                 this.juego.Nivel++;
                 PonerNivel(sender);
                 ElegirPregunta(sender);
@@ -233,12 +248,11 @@ namespace Forms
                 {
                     MostrarLosNo(sender);
                     this.juego.Vidas--;
-                    labelVidas.Text = this.juego.Vidas.ToString();
+                    PonerVidas(sender);
                 }
                 else
                 {
-                    fin.ShowDialog();
-                    this.Hide();
+                    LanzarGameOver(sender);
                 }
             }
         }
@@ -249,7 +263,7 @@ namespace Forms
         {
             if (this.juego.LaPregunta.Correcta == this.botonAbI.Text)
             {
-
+                this.juego.PreguntaResuelta(this.juego.LaPregunta);
                 this.juego.Nivel++;
                 PonerNivel(sender);
                 ElegirPregunta(sender);
@@ -260,13 +274,11 @@ namespace Forms
                 if (this.juego.Vidas > 1)
                 {
                     this.juego.Vidas--;
-                    labelVidas.Text = this.juego.Vidas.ToString();
+                    PonerVidas(sender);
                 }
                 else
                 {
-                    MostrarLosNo(sender);
-                    fin.ShowDialog();
-                    this.Hide();
+                    LanzarGameOver(sender);
                 }
 
             }
@@ -283,12 +295,11 @@ namespace Forms
                 ElegirPregunta(sender);
                 ElegirBoton(sender);
                 this.juego.Vidas--;
-                labelVidas.Text = this.juego.Vidas.ToString();
+                PonerVidas(sender);
             }
             else
-            {                
-                fin.ShowDialog();
-                this.Hide();
+            {
+                LanzarGameOver(sender);
             }
 
         }
@@ -317,23 +328,34 @@ namespace Forms
             start_Click(sender, e);
         }
 
+        private void LanzarGameOver (object sender)
+        {
+            this.juego.Nivel = 1;
+            this.juego.Vidas = 5;
+            PonerNivel(sender);
+            PonerVidas(sender);
+            ElegirPregunta(sender);
+            ElegirBoton(sender);
+            
+            new GameOver().ShowDialog();
+        }
         private void MostrarLosNo(object sender)
         {
+         
+            this.no1.Visible = true;    
             
-            this.no1.Visible = true;
-            Task.Delay(5000);
             this.no1.Visible = false;
             this.no2.Visible = true;
-            Task.Delay(5000);
+
             this.no2.Visible = false;
             this.no3.Visible = true;
-            Task.Delay(5000);
+
             this.no3.Visible = false;
             this.no4.Visible = true;
-            Task.Delay(5000);
+
             this.no4.Visible = false;
             this.no5.Visible = true;
-            Task.Delay(5000);
+
             this.no5.Visible = false;
         }
         private void PantallaInicio_Load(object sender, EventArgs e)

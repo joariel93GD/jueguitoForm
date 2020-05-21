@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager;
 
 namespace Forms
 {
@@ -15,16 +16,13 @@ namespace Forms
         public GameOver()
         {
             InitializeComponent();
+            
         }
 
-        private void GameOver_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnReintentar_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            this.Close();
         }
     }
 }
